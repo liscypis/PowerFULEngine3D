@@ -10,6 +10,9 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+PowerFULEngine3D.vcxproj
+PowerFULEngine3D.vcxproj.filters
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
