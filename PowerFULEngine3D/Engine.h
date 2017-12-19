@@ -17,11 +17,11 @@ class Engine {int argc;
 	char* name;
 	unsigned int mode;
 public:
-	Engine(int width, int height, char* name, int argc, char **argv);
+	Engine(int width, int height, int vpos, int hpos, char* name, int argc, char **argv);
 	~Engine();
-	void glutDestroy(int win);
+	void destroyWindow(int win);
 	static void display();
-	void engineInit();
+	void engineInit(int vpos, int hpos);
 	static int createWindow(char *name);
 	void running();
 };
