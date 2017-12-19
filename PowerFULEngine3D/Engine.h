@@ -19,8 +19,10 @@ class Engine {int argc;
 public:
 	Engine(int width, int height, char* name, int argc, char **argv);
 	~Engine();
+	void glutDestroy(int win);
 	static void display();
 	void engineInit();
+	static int createWindow(char *name);
 	void running();
 };
 

@@ -8,9 +8,16 @@ void Engine::engineInit()
 	glutInitDisplayMode(GLUT_SINGLE);
 	glutInitWindowSize(this->screen_w, this->screen_h);
 	glutInitWindowPosition(100, 100);
-	glutCreateWindow("Simple Window");
-	glutDisplayFunc(Engine::display);
-	glutMainLoop();
+}
+
+int Engine::createWindow(char *name)
+{
+	return glutCreateWindow(name);
+}
+
+void Engine::glutDestroy(int win)
+{
+	glutDestroyWindow(win);
 }
 
 void Engine::display(void) {
@@ -20,8 +27,6 @@ void Engine::display(void) {
 	glLoadIdentity();
 	glColor3f(1, 0, 0);
 	glutSolidTeapot(60);
-	// Flush buffers to screen
-
 	glFlush();
 }
 
@@ -33,6 +38,11 @@ Engine::Engine(int width, int height, char* name, int argc, char **argv) {
 	this->name = name;
 	this->argc = argc;
 	this->argv = argv;
+	engineInit();
+	int create = createWindow(name);
+	glutDisplayFunc(Engine::display);
+	glutMainLoop();
+	glutDestroy(create);
 }
 
 
@@ -41,9 +51,7 @@ Engine::~Engine() {
 }
 
 
-
-
 void Engine::running()
 {
-	
+
 }
