@@ -21,9 +21,17 @@
   <ItemGroup>
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Primitives.cpp" />
+    <ClCompile Include="Samples.cpp" />
+    <ClCompile Include="UserInput.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="Primitives.h" />
+    <ClInclude Include="Samples.h" />
+    <ClInclude Include="UserInput.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

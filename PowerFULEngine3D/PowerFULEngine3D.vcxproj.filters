@@ -31,6 +31,12 @@
     <Filter Include="Resource Files\Models">
       <UniqueIdentifier>{34eeab95-f4d6-42b7-afce-cefa61e4dad5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Settings">
+      <UniqueIdentifier>{b023833b-9f18-44de-bfaa-025439eedee9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\2D">
+      <UniqueIdentifier>{d5421928-fdde-4413-a29e-41cb9c439749}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -39,9 +45,33 @@
     <ClCompile Include="Engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UserInput.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Source Files\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="Primitives.cpp">
+      <Filter>Source Files\Graphics\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Samples.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitives.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Samples.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
