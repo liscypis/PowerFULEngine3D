@@ -6,6 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+PowerFULEngine3D.sln
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
