@@ -13,7 +13,6 @@ Samples::Samples()
 }
 
 void Samples::enableUserInputs() {
-	glLoadIdentity();
 	UserInput ui;
 		ui.enableKeyboard();
 		ui.enableMouse();
@@ -38,6 +37,10 @@ void Samples::drawSampleObjects() {
 			p.drawSnowMan();
 			glPopMatrix();
 		}
+	glPushMatrix();
+	glTranslatef(5.0f, 0.0f, 0.0f); // Translate 5 Units Left
+	p.triangle({ 10.0f,0.0f,10.0f }, { 10.0f,0.0f,-10.0f }, { 10.0f, 5.0f, 4.0f }, { 0.55f,0.0f,0.0f });
+	glPopMatrix();
 }
 
 
