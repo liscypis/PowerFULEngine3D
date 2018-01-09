@@ -38,8 +38,17 @@ void Samples::drawSampleObjects() {
 			glPopMatrix();
 		}
 	glPushMatrix();
-	glTranslatef(5.0f, 0.0f, 0.0f); // Translate 5 Units Left
-	p.triangle({ 10.0f,0.0f,10.0f }, { 10.0f,0.0f,-10.0f }, { 10.0f, 5.0f, 4.0f }, { 0.55f,0.0f,0.0f });
+		glTranslatef(5.0f, 0.0f, 0.0f); // Translate 5 Units Left
+		p.triangle({ 10.0f,0.0f,10.0f }, { 10.0f,0.0f,-10.0f }, { 10.0f, 5.0f, 4.0f }, { 0.55f,0.0f,0.0f });
+	glPopMatrix();
+	glPushMatrix();
+		p.line({ 0.0f,0.0f,0.0f }, { 0.0f,50.0f,0.0f }, { 0.0f,0.2f,1.0f });
+	glPopMatrix();
+	glPushMatrix();
+		p.line({ 0.0f,0.0f,0.0f }, { 50.0f,0.0f,0.0f }, { 1.0f,0.0f,0.2f });
+	glPopMatrix();
+	glPushMatrix();
+		p.line({ 0.0f,0.0f,0.0f }, { 0.0f,0.0f,50.0f }, { 0.0f,1.0f,0.2f });
 	glPopMatrix();
 }
 

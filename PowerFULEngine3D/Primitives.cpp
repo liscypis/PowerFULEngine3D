@@ -9,21 +9,29 @@ Primitives::Primitives()
 }
 
 
-void Primitives::triangle(const float(&x)[3], const float(&y)[3], const float(&z)[3], const float(&rgb)[3]) {
+void Primitives::triangle(const float(&a)[3], const float(&b)[3], const float(&c)[3], const float(&rgb)[3]) {
 	glBegin(GL_TRIANGLES);
 	glColor3f(rgb[0], rgb[1], rgb[2]);
-	glVertex3f(x[0], x[1], x[2]);
-	glVertex3f(y[0], y[1], y[2]);
-	glVertex3f(z[0], z[1], z[2]);
+	glVertex3f(a[0], a[1], a[2]);
+	glVertex3f(b[0], b[1], b[2]);
+	glVertex3f(c[0], c[1], c[2]);
 	glEnd();
 }
 
-void Primitives::terrain(const float(&x)[3], const float(&y)[3], const float(&z)[3], const float(&d)[3], const float(&rgb)[3]) {
+void Primitives::line(const float(&a)[3], const float(&b)[3], const float(&rgb)[3]) {
+	glBegin(GL_LINES);
+	glColor3f(rgb[0], rgb[1], rgb[2]);
+	glVertex3f(a[0], a[1], a[2]);
+	glVertex3f(b[0], b[1], b[2]);
+	glEnd();
+}
+
+void Primitives::terrain(const float(&a)[3], const float(&b)[3], const float(&c)[3], const float(&d)[3], const float(&rgb)[3]) {
 	glBegin(GL_QUADS);
 	glColor3f(rgb[0], rgb[1], rgb[2]);
-	glVertex3f(x[0], x[1], x[2]);
-	glVertex3f(y[0], y[1], y[2]);
-	glVertex3f(z[0], z[1], z[2]);
+	glVertex3f(a[0], a[1], a[2]);
+	glVertex3f(b[0], b[1], b[2]);
+	glVertex3f(c[0], c[1], c[2]);
 	glVertex3f(d[0], d[1], d[2]);
 	glEnd();
 }
