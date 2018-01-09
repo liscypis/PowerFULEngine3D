@@ -1,6 +1,5 @@
 #include "Engine.h"
 #include "Window.h"
-#include "UserInput.h"
 #include "Samples.h"
 
 void Engine::engineInit()
@@ -17,6 +16,7 @@ void Engine::renderScene(void) {
 
 	Samples samples;
 	samples.drawSampleObjects();
+	samples.enableUserInputs();
 
 	glutSwapBuffers();
 }
@@ -36,9 +36,6 @@ Engine::Engine(int width, int height, int vpos, int hpos, char* name, int argc, 
 	glutDisplayFunc(renderScene);
 	glutIdleFunc(renderScene);
 	glutReshapeFunc(Window::resize);
-	UserInput ui;
-	ui.enableKeyboard();
-	ui.enableMouse();
 	glutIgnoreKeyRepeat(1);
 	glutMainLoop();
 }

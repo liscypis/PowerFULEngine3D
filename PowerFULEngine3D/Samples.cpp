@@ -1,6 +1,7 @@
 #include "Samples.h"
 #include "Primitives.h"
 #include "Camera.h"
+#include "UserInput.h"
 #include "glut.h"
 #include "gl\GLU.h"
 #include "gl\GL.h"
@@ -10,10 +11,16 @@ Samples::Samples()
 {
 
 }
-void Samples::drawSampleObjects() {
-	glLoadIdentity();
+
+void Samples::enableUserInputs() {
+	UserInput ui;
+		ui.enableKeyboard();
+		ui.enableMouse();
 	Camera c;
 		c.enableCamera();
+}
+void Samples::drawSampleObjects() {
+	glLoadIdentity();
 	Primitives p;
 		p.terrain(
 		{ -100.0f, 0.0f, -100.0f },
