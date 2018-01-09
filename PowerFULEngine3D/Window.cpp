@@ -1,6 +1,6 @@
 #include "Window.h"
 
-
+float Window::ratio;
 
 Window::Window()
 {
@@ -10,7 +10,7 @@ void Window::resize(int w, int h) {
 	if (h == 0)
 		h = 1;
 
-	float ratio = w * 1.0 / h;
+	ratio = w * 1.0 / h;
 
 	glMatrixMode(GL_PROJECTION);
 

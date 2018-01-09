@@ -3,6 +3,7 @@
 #include "gl\GL.h"
 class Window
 {	
+	static float ratio;
 public:
 	Window();
 	static void resize(int w, int h);
