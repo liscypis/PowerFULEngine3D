@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Primitives.cpp" />
@@ -27,11 +28,16 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Primitives.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Samples.h" />
     <ClInclude Include="UserInput.h" />
     <ClInclude Include="Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PowerFULEngine3D.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -89,8 +95,8 @@
     <LibraryPath>C:\glut;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Biblioteki\glut;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Biblioteki\glut;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\glut;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\glut;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

@@ -1,10 +1,11 @@
 #include "glut.h"
 #include "gl\GLU.h"
 #include "gl\GL.h"
+
 class UserInput
 {
-public:
 
+public:
 	UserInput();
 	void enableKeyboard();
 	void enableMouse();

@@ -3,6 +3,7 @@ class Samples
 {
 public:
 	Samples();
+	void drawSampleObjects();
 	~Samples();
 };
 
