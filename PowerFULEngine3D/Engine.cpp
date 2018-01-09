@@ -16,7 +16,6 @@ void Engine::renderScene(void) {
 
 	Samples samples;
 	samples.drawSampleObjects();
-	samples.enableUserInputs();
 
 	glutSwapBuffers();
 }

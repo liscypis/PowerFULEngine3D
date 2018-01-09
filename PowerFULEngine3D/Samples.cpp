@@ -13,6 +13,7 @@ Samples::Samples()
 }
 
 void Samples::enableUserInputs() {
+	glLoadIdentity();
 	UserInput ui;
 		ui.enableKeyboard();
 		ui.enableMouse();
@@ -21,6 +22,7 @@ void Samples::enableUserInputs() {
 }
 void Samples::drawSampleObjects() {
 	glLoadIdentity();
+	enableUserInputs();
 	Primitives p;
 		p.terrain(
 		{ -100.0f, 0.0f, -100.0f },
