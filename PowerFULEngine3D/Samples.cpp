@@ -22,6 +22,7 @@ void Samples::enableUserInputs() {
 void Samples::drawSampleObjects() {
 	glLoadIdentity();
 	enableUserInputs();
+	glClearColor(0.05f, 0.35f, 0.7f, 1.0f);
 	Primitives p;
 		p.terrain(
 		{ -100.0f, 0.0f, -100.0f },
