@@ -7,7 +7,6 @@
 #include "gl\GLU.h"
 #include "gl\GL.h"
 
-
 Samples::Samples()
 {
 
@@ -20,13 +19,20 @@ void Samples::enableUserInputs() {
 	Camera c;
 		c.enableCamera();
 }
-void Samples::drawSampleObjects() {
-	glLoadIdentity();
-	enableUserInputs();
-	glClearColor(0.05f, 0.35f, 0.7f, 1.0f);
+
+void Samples::enableLightning() {
 	Light l;
 	l.ambientLight();
 	l.pointLight(0.0f, 0.0f, 1.5f, 0, 1, 1);
+}
+
+void Samples::drawSampleObjects() {
+	glLoadIdentity();
+	glClearColor(0.05f, 0.35f, 0.7f, 1.0f);
+
+	Samples::enableUserInputs();
+	Samples::enableLightning();
+
 	Primitives p;
 		p.terrain(
 		{ -100.0f, 0.0f, -100.0f },
@@ -42,6 +48,7 @@ void Samples::drawSampleObjects() {
 			p.drawSnowMan();
 			glPopMatrix();
 		}
+
 	glPushMatrix();
 		p.drawSphere(1, 1);
 	glPopMatrix();
