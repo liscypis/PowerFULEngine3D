@@ -21,10 +21,7 @@ public:
 	Engine(int width, int height, int vpos, int hpos, char* name, int argc, char **argv);
 	~Engine();
 	static void renderScene();
-	static void PointLight(const float x, const float y, const float z, const float amb, const float diff, const float spec);
-	static void AmbientLighting();
 	void engineInit();
-	static void drawSnowMan();
 	static void close(unsigned char c);
 };
 

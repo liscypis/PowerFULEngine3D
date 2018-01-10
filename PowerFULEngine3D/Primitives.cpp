@@ -36,6 +36,24 @@ void Primitives::terrain(const float(&a)[3], const float(&b)[3], const float(&c)
 	glEnd();
 }
 
+void Primitives::normalTerrain(const float(&a)[3], const float(&b)[3], const float(&c)[3], const float(&d)[3], const float(&rgb)[3]) {
+	glBegin(GL_QUADS);
+	glColor3f(rgb[0], rgb[1], rgb[2]);
+	glNormal3f(a[0], a[1], a[2]);
+	glNormal3f(b[0], b[1], b[2]);
+	glNormal3f(c[0], c[1], c[2]);
+	glNormal3f(d[0], d[1], d[2]);
+	glEnd();
+}
+
+void Primitives::drawSphere(const float radius, const float alpha) {
+		glColor4f(1.0f, 0.0f, 0.0f, alpha);
+		GLUquadricObj *quadratic;
+		quadratic = gluNewQuadric();
+		gluQuadricNormals(quadratic, GLU_SMOOTH);
+		gluSphere(quadratic, radius, 32, 32);
+}
+
 void Primitives::drawSnowMan()
 {
 	glColor3f(1.0f, 1.0f, 1.0f);
