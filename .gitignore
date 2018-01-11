@@ -7,6 +7,7 @@
 *.userosscache
 *.sln.docstates
 PowerFULEngine3D.sln
+PowerFULEngine3D/PowerFULEngine3D.vcxproj
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
