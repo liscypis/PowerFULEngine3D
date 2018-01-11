@@ -101,8 +101,8 @@
     <LibraryPath>C:\glut;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\glut;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\glut;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Biblioteki\glut;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Biblioteki\glut;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

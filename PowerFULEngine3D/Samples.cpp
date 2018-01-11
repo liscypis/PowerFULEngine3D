@@ -70,6 +70,74 @@ void Samples::drawSampleObjects() {
 		glTranslatef(-5.0f, 0.0f, 0.0f); 
 		glutSolidTeapot(2.0f);
 	glPopMatrix();
+
+	///////
+	///// Œcierwo fonty do samego konca
+	/////
+
+	setOrthographicProjection();
+
+	glPushMatrix();
+	glLoadIdentity();
+	renderSpacedBitmapString(5,30,1,GLUT_BITMAP_HELVETICA_18,"Lighthouse3D");
+	glPopMatrix();
+
+	restorePerspectiveProjection();
+
+	//glutSwapBuffers();
+}
+void Samples::setOrthographicProjection() {
+	int h = 720;
+	int w = 1280;
+	// switch to projection mode
+	glMatrixMode(GL_PROJECTION);
+
+	// save previous matrix which contains the
+	//settings for the perspective projection
+	glPushMatrix();
+
+	// reset matrix
+	glLoadIdentity();
+
+	// set a 2D orthographic projection
+	gluOrtho2D(0, w, 0, h);
+
+	// invert the y axis, down is positive
+	glScalef(1, -1, 1);
+
+	// mover the origin from the bottom left corner
+	// to the upper left corner
+	glTranslatef(0, -h, 0);
+
+	// switch back to modelview mode
+	glMatrixMode(GL_MODELVIEW);
+}
+void Samples::restorePerspectiveProjection() {
+
+	glMatrixMode(GL_PROJECTION);
+	// restore previous projection matrix
+	glPopMatrix();
+
+	// get back to modelview mode
+	glMatrixMode(GL_MODELVIEW);
+}
+void Samples::renderSpacedBitmapString(
+
+			float x,
+			float y,
+			int spacing,
+			void *font,
+			char *string) {
+
+  char *c;
+  int x1=x;
+
+  for (c=string; *c != '\0'; c++) {
+
+	glRasterPos2f(x1,y);
+	glutBitmapCharacter(font, *c);
+	x1 = x1 + glutBitmapWidth(font,*c) + spacing;
+  }
 }
 
 
