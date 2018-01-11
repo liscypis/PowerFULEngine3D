@@ -11,6 +11,8 @@ float Camera::deltaAngle = 0.0f;
 float Camera::deltaAngleX = 0.0f;
 float Camera::deltaMove = 0.0f;
 float Camera::deltaMoveVertical = 0.0f;
+int Camera::speed = 1;
+
 
 int Camera::xOrigin = -1;
 
@@ -38,12 +40,12 @@ void Camera::computeDirectory(float deltaAngle)
 void Camera::moveCamera(unsigned char key, int x, int y)
 {
 	switch (key) {
-		case GLUT_KEY_LEFT: deltaAngle = -0.01f; break;
-		case GLUT_KEY_RIGHT: deltaAngle = 0.01f; break;
-		case GLUT_KEY_PAGE_UP: deltaMoveVertical = 5.0f; break;
-		case GLUT_KEY_PAGE_DOWN: deltaMoveVertical = -5.0f; break;
-		case GLUT_KEY_UP: deltaMove = 0.5f; break;
-		case GLUT_KEY_DOWN: deltaMove = -0.5f; break;
+		case GLUT_KEY_LEFT: deltaAngle = -0.01f*speed; break;
+		case GLUT_KEY_RIGHT: deltaAngle = 0.01f*speed; break;
+		case GLUT_KEY_PAGE_UP: deltaMoveVertical = 5.0f*speed; break;
+		case GLUT_KEY_PAGE_DOWN: deltaMoveVertical = -5.0f*speed; break;
+		case GLUT_KEY_UP: deltaMove = 0.5f*speed; break;
+		case GLUT_KEY_DOWN: deltaMove = -0.5f*speed; break;
 	}
 }
 void Camera::moveCamera(int button, int state, int x, int y)
@@ -77,6 +79,29 @@ void Camera::mouseMotion(int x, int y)
 		lx = sin(angle - deltaAngleX);
 		lz = -cos(angle - deltaAngleX);
 	}
+}
+
+void Camera::changeSpeed(unsigned char c) {
+	if (c == 99 || c == 67) {
+		switch (speed) {
+			case 1: speed = 2; 
+			break;
+			case 2: speed = 5;
+			break;
+			case 5: speed = 1;
+			break;
+			default: speed = 1;
+		}
+		deltaMove = 0;
+	}
+}
+
+int Camera::getSpeed() {
+	return speed;
+}
+
+int Camera::setSpeed(int s) {
+	speed = s;
 }
 
 void Camera::enableCamera()

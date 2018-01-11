@@ -3,6 +3,8 @@
 #include "Camera.h"
 #include "UserInput.h"
 #include "Light.h"
+#include "Window.h"
+#include "Number.h"
 #include "Text.h"
 #include "glut.h"
 #include "gl\GLU.h"
@@ -16,8 +18,6 @@ void Samples::enableUserInputs() {
 	UserInput ui;
 		ui.enableKeyboard();
 		ui.enableMouse();
-	Camera c;
-		c.enableCamera();
 }
 
 void Samples::enableLightning() {
@@ -32,6 +32,9 @@ void Samples::drawSampleObjects() {
 
 	Samples::enableUserInputs();
 	Samples::enableLightning();
+
+	Camera c;
+		c.enableCamera();
 
 	Primitives p;
 		p.terrain(
@@ -48,9 +51,10 @@ void Samples::drawSampleObjects() {
 			p.drawSnowMan();
 			glPopMatrix();
 		}
-	Text t;
+
 	
 	glPushMatrix();
+		glTranslatef(4.0f, 2.0f, 0.0f);
 		p.drawSphere(1, 1);
 	glPopMatrix();
 	glPushMatrix();
@@ -67,77 +71,24 @@ void Samples::drawSampleObjects() {
 		p.line({ 0.0f,0.0f,0.0f }, { 0.0f,0.0f,50.0f }, { 0.0f,1.0f,0.2f });
 	glPopMatrix();
 	glPushMatrix();
-		glTranslatef(-5.0f, 0.0f, 0.0f); 
+		glTranslatef(-5.0f, 2.0f, 0.0f); 
 		glutSolidTeapot(2.0f);
 	glPopMatrix();
 
-	///////
-	///// Œcierwo fonty do samego konca
-	/////
+	Text t;
+	Number n(Window::getWidth());
+	Number n2(Window::getHeight());
 
-	setOrthographicProjection();
+	t.renderSpacedBitmapString(5, 30, 1,"Resolution" );
+	t.renderSpacedBitmapString(150,30,1, n.toChar());
+	t.renderSpacedBitmapString(200, 30, 1, "x");
+	t.renderSpacedBitmapString(210, 30, 1, n2.toChar());
 
-	glPushMatrix();
-	glLoadIdentity();
-	renderSpacedBitmapString(5,30,1,GLUT_BITMAP_HELVETICA_18,"Lighthouse3D");
-	glPopMatrix();
+	Number n3(c.getSpeed());
 
-	restorePerspectiveProjection();
-
-	//glutSwapBuffers();
-}
-void Samples::setOrthographicProjection() {
-	int h = 720;
-	int w = 1280;
-	// switch to projection mode
-	glMatrixMode(GL_PROJECTION);
-
-	// save previous matrix which contains the
-	//settings for the perspective projection
-	glPushMatrix();
-
-	// reset matrix
-	glLoadIdentity();
-
-	// set a 2D orthographic projection
-	gluOrtho2D(0, w, 0, h);
-
-	// invert the y axis, down is positive
-	glScalef(1, -1, 1);
-
-	// mover the origin from the bottom left corner
-	// to the upper left corner
-	glTranslatef(0, -h, 0);
-
-	// switch back to modelview mode
-	glMatrixMode(GL_MODELVIEW);
-}
-void Samples::restorePerspectiveProjection() {
-
-	glMatrixMode(GL_PROJECTION);
-	// restore previous projection matrix
-	glPopMatrix();
-
-	// get back to modelview mode
-	glMatrixMode(GL_MODELVIEW);
-}
-void Samples::renderSpacedBitmapString(
-
-			float x,
-			float y,
-			int spacing,
-			void *font,
-			char *string) {
-
-  char *c;
-  int x1=x;
-
-  for (c=string; *c != '\0'; c++) {
-
-	glRasterPos2f(x1,y);
-	glutBitmapCharacter(font, *c);
-	x1 = x1 + glutBitmapWidth(font,*c) + spacing;
-  }
+	t.renderSpacedBitmapString(5, 60, 1, "(C)amera speed: ");
+	t.renderSpacedBitmapString(190, 60, 1, n3.toChar());
+	t.renderSpacedBitmapString(200, 60, 1, "X");
 }
 
 

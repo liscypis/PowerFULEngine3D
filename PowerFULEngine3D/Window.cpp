@@ -1,12 +1,18 @@
 #include "Window.h"
 
 float Window::ratio;
+int Window::width;
+int Window::height;
 
 Window::Window()
 {
 }
 
 void Window::resize(int w, int h) {
+
+	width = w;
+	height = h;
+
 	if (h == 0)
 		h = 1;
 
@@ -28,6 +34,13 @@ int Window::createWindow(char *name)
 void Window::destroyWindow(int win)
 {
 	glutDestroyWindow(win);
+}
+
+int Window::getWidth() {
+	return width;
+}
+int Window::getHeight() {
+	return height;
 }
 
 Window::~Window()

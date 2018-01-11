@@ -16,6 +16,7 @@ class Camera
 	static float deltaMove;
 	static float deltaMoveVertical;
 	static int xOrigin;
+	static int speed;
 public:
 	Camera();
 	static void computePosition(float deltaMove);
@@ -24,7 +25,10 @@ public:
 	void moveCamera(unsigned char key, int x, int y);
 	void moveCamera(int button, int state, int x, int y);
 	static void stopCamera(int key, int x, int y);
+	static void changeSpeed(unsigned char c);
 	static void mouseMotion(int x, int y);
+	int getSpeed();
+	int setSpeed(int s);
 	void enableCamera();
 
 	~Camera();

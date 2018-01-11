@@ -22,6 +22,7 @@ void UserInput::enableMouse()
 void UserInput::keyboardFunction(unsigned char c, int x, int y) 
 {
 	Engine::close(c);
+	Camera::changeSpeed(c);
 }
 
 
