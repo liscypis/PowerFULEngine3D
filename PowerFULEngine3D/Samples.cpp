@@ -3,13 +3,13 @@
 #include "Camera.h"
 #include "UserInput.h"
 #include "Light.h"
+#include "Text.h"
 #include "glut.h"
 #include "gl\GLU.h"
 #include "gl\GL.h"
 
 Samples::Samples()
 {
-
 }
 
 void Samples::enableUserInputs() {
@@ -23,7 +23,7 @@ void Samples::enableUserInputs() {
 void Samples::enableLightning() {
 	Light l;
 	l.ambientLight();
-	l.pointLight(0.0f, 0.0f, 1.5f, 0, 1, 1);
+	l.pointLight(25.0f, 12.0f, 13.0, 0.0, 0.8, 0.0);
 }
 
 void Samples::drawSampleObjects() {
@@ -40,7 +40,7 @@ void Samples::drawSampleObjects() {
 		{ 100.0f, 0.0f, 100.0f },
 		{ 100.0f, 0.0f, -100.0f },
 		{ 0.15f,0.7f,0.4f });
-	// Draw 36 SnowMen
+
 	for (int i = -3; i < 3; i++)
 		for (int j = -3; j < 3; j++) {
 			glPushMatrix();
@@ -48,12 +48,13 @@ void Samples::drawSampleObjects() {
 			p.drawSnowMan();
 			glPopMatrix();
 		}
-
+	Text t;
+	
 	glPushMatrix();
 		p.drawSphere(1, 1);
 	glPopMatrix();
 	glPushMatrix();
-		glTranslatef(5.0f, 0.0f, 0.0f); // Translate 5 Units Left
+		glTranslatef(5.0f, 0.0f, 0.0f); 
 		p.triangle({ 10.0f,0.0f,10.0f }, { 10.0f,0.0f,-10.0f }, { 10.0f, 5.0f, 4.0f }, { 0.55f,0.0f,0.0f });
 	glPopMatrix();
 	glPushMatrix();
@@ -66,7 +67,7 @@ void Samples::drawSampleObjects() {
 		p.line({ 0.0f,0.0f,0.0f }, { 0.0f,0.0f,50.0f }, { 0.0f,1.0f,0.2f });
 	glPopMatrix();
 	glPushMatrix();
-		glTranslatef(-5.0f, 0.0f, 0.0f); // Translate 5 Units Right
+		glTranslatef(-5.0f, 0.0f, 0.0f); 
 		glutSolidTeapot(2.0f);
 	glPopMatrix();
 }

@@ -14,7 +14,7 @@ Light::Light()
 
 void Light::ambientLight() 
 {
-	double amb = .3;
+	double amb = .5;
 	GLfloat global_ambient[] = { amb,amb,amb, 0.1 };
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, global_ambient);
 }

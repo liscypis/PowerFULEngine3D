@@ -25,6 +25,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Primitives.cpp" />
     <ClCompile Include="Samples.cpp" />
+    <ClCompile Include="Text.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="UserInput.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
@@ -35,6 +37,8 @@
     <ClInclude Include="Primitives.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Samples.h" />
+    <ClInclude Include="Text.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="UserInput.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
