@@ -122,6 +122,50 @@ void Primitives::solidCube(int size) {
 	glEnd();
 }
 
+void Primitives::wall(int size) {
+	glBegin(GL_POLYGON);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.5*size, -0.5*size, -0.5*size);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5*size, 4.5*size, -0.5*size);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-9.5*size, 4.5*size, -0.5*size);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-9.5*size, -0.5*size, -0.5*size);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.5*size, -0.5*size, 0.5*size);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5*size, 4.5*size, 0.5*size);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-9.5*size, 4.5*size, 0.5*size);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-9.5*size, -0.5*size, 0.5*size);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.5*size, -0.5*size, -0.5*size);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5*size, 4.5*size, -0.5*size);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.5*size, 4.5*size, 0.5*size);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(0.5*size, -0.5*size, 0.5*size);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-9.5*size, -0.5*size, 0.5*size);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(-9.5*size, 4.5*size, 0.5*size);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-9.5*size, 4.5*size, -0.5*size);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-9.5*size, -0.5*size, -0.5*size);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.5*size, 4.5*size, 0.5*size);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5*size, 4.5*size, -0.5*size);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-9.5*size, 4.5*size, -0.5*size);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-9.5*size, 4.5*size, 0.5*size);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.5*size, -0.5*size, -0.5*size);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5*size, -0.5*size, 0.5*size);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-0.5*size, -0.5*size, 0.5*size);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.5*size, -0.5*size, -0.5*size);
+	glEnd();
+}
+
 
 Primitives::~Primitives()
 {

@@ -11,7 +11,7 @@
 Samples::Samples()
 {
 }
-
+float Samples::angle = 0.0f;
 void Samples::enableUserInputs() {
 	UserInput ui;
 		ui.enableKeyboard();
@@ -49,7 +49,6 @@ void Samples::drawSampleObjects() {
 			{ 1.0f,1.0f,1.0f });
 			glPopMatrix();
 		}
-	glPushMatrix();
 	glDisable(GL_TEXTURE_2D);
 	for (int i = -3; i < 3; i++)
 		for (int j = -1; j < 1; j++) {
@@ -62,6 +61,17 @@ void Samples::drawSampleObjects() {
 		}
 	glDisable(GL_TEXTURE_2D);
 
+	glDisable(GL_TEXTURE_2D);
+	for (int i = -3; i < 3; i++)
+		for (int j = -1; j < 1; j++) {
+			glEnable(GL_TEXTURE_2D);
+			glPushMatrix();
+			glTranslatef(-9.5f*i, 4.5f+4.5f*j, -45.0f);
+			glBindTexture(GL_TEXTURE_2D, Texture::textureRepository[5]);
+			p.wall(1);
+			glPopMatrix();
+		}
+	glDisable(GL_TEXTURE_2D);
 	
 	Text t;
 	Number n(Window::getWidth());
@@ -75,11 +85,17 @@ void Samples::drawSampleObjects() {
 	t.renderSpacedBitmapString(210, 50, 1, n2.toChar());
 
 	Number n3(c.getSpeed());
-
 	t.renderSpacedBitmapString(5, 75, 1, "(C)amera speed: ");
 	t.renderSpacedBitmapString(190, 75, 1, n3.toChar());
 	t.renderSpacedBitmapString(200, 75, 1, "X");
-	
+
+	glPushMatrix();
+	glRotated(angle, 5, 10, 5);
+	glTranslated(0, 20, 15);
+	p.drawSphere(5, 1);
+	glPopMatrix();
+	angle += 0.5;
+	if(angle==360) angle=0;
 }
 
 

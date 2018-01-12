@@ -25,6 +25,9 @@ void Texture::insertTextures()
 	glGenTextures(1, &textureRepository[4]);
 	glBindTexture(GL_TEXTURE_2D, textureRepository[4]);
 	textureRepository[4] = loadImage("wood.jpg");
+	glGenTextures(1, &textureRepository[5]);
+	glBindTexture(GL_TEXTURE_2D, textureRepository[5]);
+	textureRepository[5] = loadImage("MedievalBrick.tiff");
 }
 
 int Texture::loadImage(const char* theFileName)// devIL loader

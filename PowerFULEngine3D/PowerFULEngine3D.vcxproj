@@ -54,6 +54,7 @@
     <Image Include="brick_wall.png" />
     <Image Include="grass.png" />
     <Image Include="grass2.png" />
+    <Image Include="MedievalBrick.tiff" />
     <Image Include="sand.jpg" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

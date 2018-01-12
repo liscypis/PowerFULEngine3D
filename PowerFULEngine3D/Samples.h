@@ -1,6 +1,7 @@
 #pragma once
 class Samples
 {
+	static float angle;
 public:
 	Samples();
 	void enableUserInputs();

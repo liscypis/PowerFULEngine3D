@@ -141,5 +141,8 @@
     <Image Include="..\..\..\..\Downloads\wood.jpg">
       <Filter>Resource Files\Textures</Filter>
     </Image>
+    <Image Include="MedievalBrick.tiff">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>
