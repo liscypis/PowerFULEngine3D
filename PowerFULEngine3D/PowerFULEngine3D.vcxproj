@@ -49,7 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\Desktop\mud.png" />
+    <Image Include="..\..\..\..\Downloads\bluecloud_up.jpg" />
+    <Image Include="brick_wall.png" />
     <Image Include="grass.png" />
+    <Image Include="grass2.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

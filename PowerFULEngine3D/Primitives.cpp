@@ -27,7 +27,7 @@ void Primitives::line(const float(&a)[3], const float(&b)[3], const float(&rgb)[
 }
 
 void Primitives::terrain(const float(&a)[3], const float(&b)[3], const float(&c)[3], const float(&d)[3], const float(&rgb)[3]) {
-	float specReflection[] = { 0.8f, 0.8f, 0.8f, 1.0f };
+	float specReflection[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	glMaterialfv(GL_FRONT, GL_SPECULAR, specReflection);
 	glBegin(GL_QUADS);
 	glTexCoord2f(1.0f, 0.0f); glVertex3f(a[0], a[1], a[2]);
@@ -36,6 +36,7 @@ void Primitives::terrain(const float(&a)[3], const float(&b)[3], const float(&c)
 	glTexCoord2f(1.0f, 1.0f); glVertex3f(d[0], d[1], d[2]);
 	glEnd();
 }
+
 
 void Primitives::normalTerrain(const float(&a)[3], const float(&b)[3], const float(&c)[3], const float(&d)[3], const float(&rgb)[3]) {
 	glBegin(GL_QUADS);
@@ -48,7 +49,7 @@ void Primitives::normalTerrain(const float(&a)[3], const float(&b)[3], const flo
 }
 
 void Primitives::drawSphere(const float radius, const float alpha) {
-	glColor4f(1.0f, 0.0f, 0.0f, alpha);
+	//glColor4f(1.0f, 0.0f, 0.0f, alpha);
 	GLUquadricObj *quadratic;
 	quadratic = gluNewQuadric();
 	gluQuadricNormals(quadratic, GLU_SMOOTH);

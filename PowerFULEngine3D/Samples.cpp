@@ -37,21 +37,22 @@ void Samples::drawSampleObjects() {
 
 	Primitives p;
 	glEnable(GL_TEXTURE_2D);
-	for (int i = -5; i < 5; i++)
-		for (int j = -5; j < 5; j++) {
+	for (int i = -3; i < 3; i++)
+		for (int j = -3; j < 3; j++) {
 			glPushMatrix();
-			glTranslatef(i*4.0, 0, j * 4.0);
-			glBindTexture(GL_TEXTURE_2D, Texture::textureRepository[0]);
+			glTranslatef(i*5.0, 0, j * 5.0);
+			glBindTexture(GL_TEXTURE_2D, Texture::textureRepository[1]);
 			p.terrain(
-			{ -4.0f, 0.0f, -4.0f },
-			{ -4.0f, 0.0f, 4.0f },
-			{ 4.0f, 0.0f, 4.0f },
-			{ 4.0f, 0.0f, -4.0f },
+			{ -5.0f, 0.0f, -5.0f },
+			{ -5.0f, 0.0f, 5.0f },
+			{ 5.0f, 0.0f, 5.0f },
+			{ 5.0f, 0.0f, -5.0f },
 			{ 1.0f,1.0f,1.0f });
 			glPopMatrix();
 		}
+	glPushMatrix();
 	glDisable(GL_TEXTURE_2D);
-
+	/*
 	for (int i = -3; i < 3; i++)
 		for (int j = -3; j < 3; j++) {
 			glPushMatrix();
@@ -84,7 +85,7 @@ void Samples::drawSampleObjects() {
 		glTranslatef(-5.0f, 2.0f, 0.0f); 
 		glutSolidTeapot(2.0f);
 	glPopMatrix();
-
+	*/
 	Text t;
 	Number n(Window::getWidth());
 	Number n2(Window::getHeight());

@@ -126,5 +126,14 @@
     <Image Include="..\..\..\..\Desktop\mud.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
+    <Image Include="brick_wall.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="grass2.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\bluecloud_up.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>
