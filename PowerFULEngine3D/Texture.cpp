@@ -12,7 +12,7 @@ void Texture::insertTextures()
 {
 	glGenTextures(1, &textureRepository[0]);
 	glBindTexture(GL_TEXTURE_2D, textureRepository[0]);
-	textureRepository[0] = loadImage("mud.png");
+	textureRepository[0] = loadImage("sand.jpg");
 	glGenTextures(1, &textureRepository[1]);
 	glBindTexture(GL_TEXTURE_2D, textureRepository[1]);
 	textureRepository[1] = loadImage("grass2.png");
@@ -22,6 +22,9 @@ void Texture::insertTextures()
 	glGenTextures(1, &textureRepository[3]);
 	glBindTexture(GL_TEXTURE_2D, textureRepository[3]);
 	textureRepository[3] = loadImage("bluecloud_up.jpg");
+	glGenTextures(1, &textureRepository[4]);
+	glBindTexture(GL_TEXTURE_2D, textureRepository[4]);
+	textureRepository[4] = loadImage("wood.jpg");
 }
 
 int Texture::loadImage(const char* theFileName)// devIL loader

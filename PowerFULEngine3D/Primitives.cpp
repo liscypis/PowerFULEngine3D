@@ -78,6 +78,50 @@ void Primitives::drawSnowMan()
 	glutSolidCone(0.08f, 0.5f, 10, 2);
 }
 
+void Primitives::solidCube(int size) {
+	glBegin(GL_POLYGON);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.5*size, -0.5*size, -0.5*size);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5*size, 0.5*size, -0.5*size);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-0.5*size, 0.5*size, -0.5*size);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.5*size, -0.5*size, -0.5*size);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.5*size, -0.5*size, 0.5*size);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5*size, 0.5*size, 0.5*size);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-0.5*size, 0.5*size, 0.5*size);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.5*size, -0.5*size, 0.5*size);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.5*size, -0.5*size, -0.5*size);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5*size, 0.5*size, -0.5*size);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(0.5*size, 0.5*size, 0.5*size);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(0.5*size, -0.5*size, 0.5*size);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(-0.5*size, -0.5*size, 0.5*size);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(-0.5*size, 0.5*size, 0.5*size);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-0.5*size, 0.5*size, -0.5*size);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.5*size, -0.5*size, -0.5*size);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.5*size, 0.5*size, 0.5*size);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5*size, 0.5*size, -0.5*size);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-0.5*size, 0.5*size, -0.5*size);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.5*size, 0.5*size, 0.5*size);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.5*size, -0.5*size, -0.5*size);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(0.5*size, -0.5*size, 0.5*size);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-0.5*size, -0.5*size, 0.5*size);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(-0.5*size, -0.5*size, -0.5*size);
+	glEnd();
+}
+
 
 Primitives::~Primitives()
 {

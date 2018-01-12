@@ -9,6 +9,7 @@ public:
 	void drawSphere(const float radius, const float alpha);
 	void line(const float(&a)[3], const float(&b)[3], const float(&rgb)[3]);
 	void drawSnowMan();
+	void solidCube(int size);
 	~Primitives();
 };
 

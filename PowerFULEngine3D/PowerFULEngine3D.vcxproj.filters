@@ -135,5 +135,11 @@
     <Image Include="..\..\..\..\Downloads\bluecloud_up.jpg">
       <Filter>Resource Files\Textures</Filter>
     </Image>
+    <Image Include="sand.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Downloads\wood.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

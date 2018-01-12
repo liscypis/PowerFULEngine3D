@@ -8,7 +8,6 @@
 #include "Number.h"
 #include "Text.h"
 #include "glut.h"
-
 Samples::Samples()
 {
 }
@@ -40,52 +39,30 @@ void Samples::drawSampleObjects() {
 	for (int i = -3; i < 3; i++)
 		for (int j = -3; j < 3; j++) {
 			glPushMatrix();
-			glTranslatef(i*5.0, 0, j * 5.0);
-			glBindTexture(GL_TEXTURE_2D, Texture::textureRepository[1]);
+			glTranslatef(i*25.0, 0, j * 25.0);
+			glBindTexture(GL_TEXTURE_2D, Texture::textureRepository[0]);
 			p.terrain(
-			{ -5.0f, 0.0f, -5.0f },
-			{ -5.0f, 0.0f, 5.0f },
-			{ 5.0f, 0.0f, 5.0f },
-			{ 5.0f, 0.0f, -5.0f },
+			{ -25.0f, 0.0f, -25.0f },
+			{ -25.0f, 0.0f, 25.0f },
+			{ 25.0f, 0.0f, 25.0f },
+			{ 25.0f, 0.0f, -25.0f },
 			{ 1.0f,1.0f,1.0f });
 			glPopMatrix();
 		}
 	glPushMatrix();
 	glDisable(GL_TEXTURE_2D);
-	/*
 	for (int i = -3; i < 3; i++)
-		for (int j = -3; j < 3; j++) {
+		for (int j = -1; j < 1; j++) {
+			glEnable(GL_TEXTURE_2D);
 			glPushMatrix();
-			glTranslatef(i*10.0, 0, j * 10.0);
-			p.drawSnowMan();
+			glTranslatef(i*17.0f, 1.5f, j*17.0f);
+			glBindTexture(GL_TEXTURE_2D, Texture::textureRepository[4]);
+			p.solidCube(3);
 			glPopMatrix();
 		}
+	glDisable(GL_TEXTURE_2D);
 
 	
-	glPushMatrix();
-		glTranslatef(4.0f, 2.0f, 0.0f);
-		p.drawSphere(1, 1);
-	glPopMatrix();
-
-
-	glPushMatrix();
-		glTranslatef(5.0f, 0.0f, 0.0f); 
-		p.triangle({ 10.0f,0.0f,10.0f }, { 10.0f,0.0f,-10.0f }, { 10.0f, 5.0f, 4.0f }, { 0.55f,0.0f,0.0f });
-	glPopMatrix();
-	glPushMatrix();
-		p.line({ 0.0f,0.0f,0.0f }, { 0.0f,50.0f,0.0f }, { 0.0f,0.2f,1.0f });
-	glPopMatrix();
-	glPushMatrix();
-		p.line({ 0.0f,0.0f,0.0f }, { 50.0f,0.0f,0.0f }, { 1.0f,0.0f,0.2f });
-	glPopMatrix();
-	glPushMatrix();
-		p.line({ 0.0f,0.0f,0.0f }, { 0.0f,0.0f,50.0f }, { 0.0f,1.0f,0.2f });
-	glPopMatrix();
-	glPushMatrix();
-		glTranslatef(-5.0f, 2.0f, 0.0f); 
-		glutSolidTeapot(2.0f);
-	glPopMatrix();
-	*/
 	Text t;
 	Number n(Window::getWidth());
 	Number n2(Window::getHeight());
