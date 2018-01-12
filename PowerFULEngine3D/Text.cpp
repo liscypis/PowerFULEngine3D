@@ -4,8 +4,6 @@
 #include "gl\GLU.h"
 #include "gl\GL.h"
 
-
-
 Text::Text()
 {
 }
@@ -40,7 +38,6 @@ void Text::renderSpacedBitmapString(float x, float y, int spacing, char * string
 	char *c;
 	int x1 = x;
 	for (c = string; *c != '\0'; c++) {
-
 		glRasterPos2f(x1, y);
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *c);
 		x1 = x1 + glutBitmapWidth(GLUT_BITMAP_TIMES_ROMAN_24, *c) + spacing;

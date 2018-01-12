@@ -30,11 +30,10 @@ void Primitives::terrain(const float(&a)[3], const float(&b)[3], const float(&c)
 	float specReflection[] = { 0.8f, 0.8f, 0.8f, 1.0f };
 	glMaterialfv(GL_FRONT, GL_SPECULAR, specReflection);
 	glBegin(GL_QUADS);
-	glColor3f(rgb[0], rgb[1], rgb[2]);
-	glVertex3f(a[0], a[1], a[2]);
-	glVertex3f(b[0], b[1], b[2]);
-	glVertex3f(c[0], c[1], c[2]);
-	glVertex3f(d[0], d[1], d[2]);
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(a[0], a[1], a[2]);
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(b[0], b[1], b[2]);
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(c[0], c[1], c[2]);
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(d[0], d[1], d[2]);
 	glEnd();
 }
 

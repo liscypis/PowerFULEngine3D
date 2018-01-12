@@ -1,6 +1,8 @@
 #include "Engine.h"
 #include "Window.h"
 #include "Samples.h"
+#include "Texture.h"
+
 
 void Engine::engineInit()
 {
@@ -36,6 +38,8 @@ Engine::Engine(int width, int height, int vpos, int hpos, char* name, int argc, 
 	glutIdleFunc(renderScene);
 	glutReshapeFunc(Window::resize);
 	glutIgnoreKeyRepeat(1);
+	Texture tex;
+	tex.insertTextures();
 	glutMainLoop();
 }
 
